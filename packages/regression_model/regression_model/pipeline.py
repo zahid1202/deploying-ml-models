@@ -2,6 +2,8 @@ from sklearn.linear_model import Lasso
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
+import sys
+#sys.path.append('/Users/antara/deploying-machine-learning-models/packages/regression_model/regression_model')
 import preprocessors as pp
 
 
