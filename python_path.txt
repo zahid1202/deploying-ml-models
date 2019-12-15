@@ -19,3 +19,5 @@ git remote set-url origin https://github.com/zahid1202/deploying-ml-models
 # checking remote origin
 git remote -v
 
+# Installing packages
+pip install -r packages/regression_model/requirements.txt
