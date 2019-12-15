@@ -1,4 +1,8 @@
 
+# pathlib
+PACKAGE_ROOT = pathlib.Path('.').resolve()
+PACKAGE_ROOT = PACKAGE_ROOT / 'packages/regression_model/regression_model'
+
 # to add a python path
 
 vim ~/.bash_profile
@@ -10,5 +14,8 @@ export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/regression_model/r
 # Setting up git remote origin
 git remote set-url origin https://github.com/zahid1202/deploying-machine-learning-models
 
+git remote set-url origin https://github.com/zahid1202/deploying-ml-models
+
 # checking remote origin
 git remote -v
+
