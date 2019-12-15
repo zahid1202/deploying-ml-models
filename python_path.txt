@@ -1,0 +1,8 @@
+
+# to add a python path
+
+vim ~/.bash_profile
+
+export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/regression_model/regression_model"
+
+# to save and exit, type :wq
