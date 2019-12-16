@@ -4,9 +4,7 @@ PACKAGE_ROOT = pathlib.Path('.').resolve()
 PACKAGE_ROOT = PACKAGE_ROOT / 'packages/regression_model/regression_model'
 
 # to add a python path
-
 vim ~/.bash_profile
-
 export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/regression_model/regression_model"
 
 # to save and exit, type :wq
@@ -19,5 +17,15 @@ git remote set-url origin https://github.com/zahid1202/deploying-ml-models
 # checking remote origin
 git remote -v
 
-# Installing packages
+# Installing requirements file
 pip install -r packages/regression_model/requirements.txt
+
+# setting up a package
+python packages/regression_model/setup.py sdist bdist_wheel
+
+# Installing the package just created by above line
+pip install -e packages/regression_model # "-e" flag is to add the path for regression_model to PYTHONPATH
+
+# Fixing  ModuleNotFoundError: No module named 'api'
+vim ~/.bash_profile
+export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/ml_api/"
