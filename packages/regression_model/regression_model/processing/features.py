@@ -3,6 +3,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 from regression_model.processing.errors import InvalidModelInputError
 
+
 class LogTransformer(BaseEstimator, TransformerMixin):
     """Logarithm transformer."""
 
