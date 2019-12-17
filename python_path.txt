@@ -29,3 +29,6 @@ pip install -e packages/regression_model # "-e" flag is to add the path for regr
 # Fixing  ModuleNotFoundError: No module named 'api'
 vim ~/.bash_profile
 export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/ml_api/"
+
+# activate virtual env
+source activate myenv
