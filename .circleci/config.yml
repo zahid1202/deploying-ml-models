@@ -32,7 +32,6 @@ jobs:
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
             echo 'export PATH=packages/ml_api/:$PATH' >> $BASH_ENV
-            source $BASH_ENV
             py.test -vv packages/ml_api/tests
 
   train_and_upload_regression_model:
