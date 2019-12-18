@@ -21,14 +21,6 @@ jobs:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.7.2
-    steps:
-      - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
       - run:
           name: Runnning tests
           command: |
@@ -36,13 +28,7 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
-      - run:
-          name: Runnning tests
-          command:  py.test -vv packages/ml_api/tests
+            py.test -vv packages/ml_api/tests
 
   train_and_upload_regression_model:
     working_directory: ~/project
