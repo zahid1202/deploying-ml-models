@@ -31,13 +31,6 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-      -run:
-          name: "Setup custom environment varialbes"
-          command: |
-            echo 'export PYTHONPATH="/packages/regression_model/ml_api"' >> $BASH_ENV
-      -run:
-          name: Running ml_api tests
-          command: |
             py.test -vv packages/ml_api/tests
 
   train_and_upload_regression_model:
