@@ -42,8 +42,7 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
       - run:
           name: Runnning tests
-          command: |
-              py.test -vv packages/ml_api/tests
+          command:  py.test -vv packages/ml_api/tests
 
   train_and_upload_regression_model:
     working_directory: ~/project
