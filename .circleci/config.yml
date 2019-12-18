@@ -1,3 +1,4 @@
+
 version: 2
 jobs:
   test_regression_model:
@@ -16,11 +17,12 @@ jobs:
             chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
             py.test -vv packages/regression_model/tests
-
   test_ml_api:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.7.2
+    steps:
+      - checkout
       - run:
           name: Runnning tests
           command: |
@@ -29,7 +31,6 @@ jobs:
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
             py.test -vv packages/ml_api/tests
-
   train_and_upload_regression_model:
     working_directory: ~/project
     docker:
@@ -54,7 +55,6 @@ workflows:
   version: 2
   test-all:
     jobs:
-      - test_regression_model
       - test_regression_model
       - test_ml_api
       - train_and_upload_regression_model
