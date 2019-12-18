@@ -17,6 +17,7 @@ jobs:
             chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
             py.test -vv packages/regression_model/tests
+
   test_ml_api:
     working_directory: ~/project
     docker:
@@ -30,8 +31,15 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-            PYTHONPATH=./packages/ml_api
+      -run:
+          name: "Setup custom environment varialbes"
+          command: |
+            echo 'export PYTHONPATH="/packages/regression_model/ml_api"' >> $BASH_ENV
+      -run:
+          name: Running ml_api tests
+          command: |
             py.test -vv packages/ml_api/tests
+
   train_and_upload_regression_model:
     working_directory: ~/project
     docker:
@@ -52,6 +60,7 @@ jobs:
             ./scripts/fetch_kaggle_dataset.sh
             PYTHONPATH=./packages/regression_model python3 packages/regression_model/regression_model/train_pipeline.py
             ./scripts/publish_model.sh ./packages/regression_model/
+
 workflows:
   version: 2
   test-all:
