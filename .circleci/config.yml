@@ -31,6 +31,8 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
+            echo 'export PATH=packages/ml_api/:$PATH' >> $BASH_ENV
+            source $BASH_ENV
             py.test -vv packages/ml_api/tests
 
   train_and_upload_regression_model:
@@ -51,7 +53,7 @@ jobs:
             . venv/bin/activate
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
             ./scripts/fetch_kaggle_dataset.sh
-            python3 packages/regression_model/regression_model/train_pipeline.py
+            PYTHONPATH=./packages/regression_model python3 packages/regression_model/regression_model/train_pipeline.py
             ./scripts/publish_model.sh ./packages/regression_model/
 
 workflows:
