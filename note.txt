@@ -32,3 +32,18 @@ export PYTHONPATH="/Users/Antara/deploying-ml-models/packages/ml_api/"
 
 # activate virtual env
 source activate myenv
+
+# kaggle token
+username:	zahid1202
+key:	f2b8ac8e8be90f9212f6a1eb82e6075b
+
+# setup enironment variable on circleci
+KAGGLE_KEY==zahid1202
+KAGGLE_USERNAME==f2b8ac8e8be90f9212f6a1eb82e6075b
+
+
+# setup GEMFURY token on circleci
+PIP_EXTRA_INDEX_URL==https://hMVBE9u5jy62m85YPqfW@pypi.fury.io/zahid1202
+
+
+
