@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@zahid1202 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-0
-0839zahid1202/deploying-machine-learning-models
-forked from trainindata/deploying-machine-learning-models
- Code Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-deploying-machine-learning-models/packages/regression_model/regression_model/processing/data_management.py
-@ChristopherGS ChristopherGS Section 9.3 - Differential Tests in CI Part 1
-5a0382f on Jan 26
-61 lines (44 sloc)  1.83 KB
-  
-Code navigation is available!
-Navigate your code with ease. Click on function and method calls to jump to their definitions or references in the same repository. Learn more
-
- Code navigation is available for this repository but data for this commit does not exist.
-
-Learn more or give us feedback
 import pandas as pd
 from sklearn.externals import joblib
 from sklearn.pipeline import Pipeline
