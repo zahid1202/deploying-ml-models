@@ -33,15 +33,3 @@ def capture_predictions() -> None:
 
 if __name__ == '__main__':
     capture_predictions()
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
