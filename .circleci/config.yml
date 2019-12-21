@@ -12,6 +12,7 @@ prepare_venv: &prepare_venv
       python3 -m venv venv
       source venv/bin/activate
       pip install --upgrade pip
+
 fetch_data: &fetch_data
   run:
     name: Set script permissions and fetch data
@@ -19,6 +20,7 @@ fetch_data: &fetch_data
       source venv/bin/activate
       chmod +x ./scripts/fetch_kaggle_dataset.sh
       ./scripts/fetch_kaggle_dataset.sh
+
 jobs:
   test_regression_model:
     <<: *defaults
@@ -41,6 +43,7 @@ jobs:
           command: |
             . venv/bin/activate
             py.test -vv packages/regression_model/tests
+            
   test_ml_api:
     <<: *defaults
     steps:
@@ -55,7 +58,7 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-            py.test -vv packages/ml_api/tests 
+            py.test -vv packages/ml_api/tests -m "not differential"
       - save_cache:
           key: py-deps-{{ checksum "packages/ml_api/requirements.txt" }}
           paths:
