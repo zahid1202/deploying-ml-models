@@ -1,8 +1,8 @@
-"""
-This script should only be run in CI.
-Never run it locally or you will disrupt the
-differential test versioning logic.
-"""
+#"""
+#This script should only be run in CI.
+#Never run it locally or you will disrupt the
+#differential test versioning logic.
+#"""
 
 import pandas as pd
 
