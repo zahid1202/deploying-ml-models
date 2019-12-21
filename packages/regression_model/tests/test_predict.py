@@ -1,4 +1,3 @@
-Learn more or give us feedback
 import math
 
 from regression_model.predict import make_prediction
